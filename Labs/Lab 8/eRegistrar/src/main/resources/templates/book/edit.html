@@ -1,0 +1,44 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Edit Book</title>-->
+<!--    <style>-->
+<!--        div.form-control {-->
+<!--            padding-bottom: 1em;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div>-->
+<!--        <h1>Prince University ::: eLibrary</h1>-->
+<!--        <div><a href="/">Home</a> | <a href="/book/list">Books</a></div>-->
+<!--        <h1>Edit Book Form</h1>-->
+<!--        <form action="/book/edit" method="post" th:object="${book}">-->
+<!--            <input type="hidden" name="bookId" id="bookId" th:value="${book.bookId}">-->
+<!--            <div class="form-control">-->
+<!--                <div><label for="title">Title</label></div>-->
+<!--                <div><input id="title" name="title" th:value="${book.title}" type="text"></div>-->
+<!--            </div>-->
+<!--            <div class="form-control">-->
+<!--                <div><label for="isbn">ISBN</label></div>-->
+<!--                <div><input id="isbn" name="isbn" th:value="${book.isbn}" type="text"></div>-->
+<!--                <div>-->
+<!--                    <span style="color: red;" th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}"></span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="form-control">-->
+<!--                <div><label for="datePublished">Date Published</label></div>-->
+<!--                <div><input id="datePublished" name="datePublished" th:value="${book.datePublished}" type="date"></div>-->
+<!--            </div>-->
+<!--            <div class="form-control">-->
+<!--                <div><label for="overdueFee">Overdue Fee</label></div>-->
+<!--                <div><input id="overdueFee" name="overdueFee" th:value="${book.overdueFee}" type="number" min="0" step="0.01"></div>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--                <button id="btnSave" type="submit">Save Book</button>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->

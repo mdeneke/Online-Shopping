@@ -1,0 +1,20 @@
+.banner {
+  height: 52%;
+  width: 100%;
+  margin-top: -30px;
+}
+
+img.itemImg {
+  width: 90%;
+}
+
+.col-lg-3 {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.imgwrapper {
+  height: 65%;
+  overflow: hidden;
+  margin-bottom: 22px;
+}

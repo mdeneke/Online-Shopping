@@ -1,0 +1,29 @@
+<h4>Add Item</h4>
+
+<div >
+  <div class="frm">
+    <label for="">Name : </label>
+    <input type="text" name="iname" [(ngModel)]="item.name">
+    
+  </div>
+  <div class="frm">
+    <label for="">Price : </label>
+    <input type="number" step="any" name="iname" [(ngModel)]="item.price">
+  </div>
+  <div class="frm">
+    <label for="">Quantity : </label>
+    <input type="number" step="any" name="iname" [(ngModel)]="item.quantity">
+  </div>
+  <div class="frm">
+    <label for="">Category :</label>
+    <select name="productna" [(ngModel)]="productId" >
+      <option *ngFor="let p of products" [value]="p.id">{{p.name}}</option>
+    </select>
+  </div>
+  <div class="frm">
+    <input type="file" class="file-upload" (change)="onFileSelected($event)" #fileUpload>
+  </div>
+ <div>
+   <button class="btn btn-success" (click)="save()">save</button>
+ </div>
+</div>

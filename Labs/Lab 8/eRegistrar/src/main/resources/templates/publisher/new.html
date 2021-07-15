@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="D. Muluken">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-EmRcsPP774S9MOi4ywB+JXUWjYnBdyInMzG2XsC5siZEUpexqxOMJW358dCYEjPu" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main-styles.css}" />
+    <title>Prince University ::: eLibrary - New Publisher</title>
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+
+    <div class="container">
+        <form id="publisherForm" method="post" action="/elibrary/publisher/new" th:object="${publisher}">
+            <fieldset>
+                <legend>New Publisher Form</legend>
+                <input type="hidden" name="supplierId" th:value="${publisher.publisherId}" />
+                <div class="form-group">
+                        <label for="name">Name:</label>
+                        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                                        class="alert alert-danger"></span>
+                        <input id="name" name="name" type="text" class="form-control" th:value="${publisher.name}">
+                </div>               
+                <div class="form-group">
+                        <label for="contactPhoneNumber">Contact Phone Number:</label>
+                        <span th:if="${#fields.hasErrors('contactPhoneNumber')}" th:errors="*{contactPhoneNumber}"
+                            class="alert alert-danger"></span>
+                        <input id="contactPhoneNumber" name="contactPhoneNumber" type="tel" class="form-control" aria-describedby="contactPhoneNumberHelp" th:value="${publisher.contactPhoneNumber}">
+                        <small id="contactPhoneNumberHelp" class="form-text text-muted">Enter the phone number in a valid Format. e.g. (123) 456-7890</small>
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">Email Address:</label>
+                    <span th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}"
+                          class="alert alert-danger"></span>
+                    <input id="emailAddress" name="emailAddress" type="text" class="form-control" th:value="${publisher.emailAddress}">
+                </div>
+                <div style="float:right;">
+                    <a href="/elibrary/publisher/new" class="btn btn-outline-warning">Cancel</a>&nbsp;&nbsp;&nbsp;
+                    <button id="btnSubmit" type="submit" class="btn btn-outline-primary">Add Supplier</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+
+    <!-- Bootstrap core JavaScript libs -->
+    <!-- Placed at the end of the document -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+</body>
+</html>

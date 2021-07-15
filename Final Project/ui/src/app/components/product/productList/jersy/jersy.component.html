@@ -1,0 +1,13 @@
+<img src="../../../../../assets/jersy2.jpg" class="banner">
+
+<div class="row">
+  <div class="col-lg-3" *ngFor="let item of items">
+    <div class="imgwrapper">
+      <img [src]="item.image" class="itemImg">
+    </div>
+    
+    <p>{{item.name}}</p>
+    <p>{{item.price}}</p>
+    <button class="btn btn-success">Add To Cart</button>
+  </div>
+</div>
